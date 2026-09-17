@@ -32,7 +32,7 @@ end
 function SO3(yaw::Float64,pitch::Float64,roll::Float64) :: TSO3
   r1 = @SMatrix [cos(yaw) -sin(yaw) 0;sin(yaw) cos(yaw) 0;0 0 1]
   r2 = @SMatrix [cos(pitch) 0 sin(pitch);0 1 0;-sin(pitch) 0 cos(pitch)]
-  r3 = @SMatrix [1 0 0;0 cos(roll) sin(roll);0 sin(roll) cos(roll)]
+  r3 = @SMatrix [1 0 0;0 cos(roll) -sin(roll);0 sin(roll) cos(roll)]
   return r1 * r2 * r3
 end
 
